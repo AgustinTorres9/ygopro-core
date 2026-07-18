@@ -62,4 +62,8 @@ OCGCORE_API void set_responseb(intptr_t pduel, byte* buf);
 OCGCORE_API int32_t preload_script(intptr_t pduel, const char* script_name);
 OCGCORE_API byte* default_script_reader(const char* script_name, int* len);
 
+typedef void (*log_handler)(const char* msg);
+
+OCGCORE_API void set_log_handler(log_handler f);
+
 #endif /* OCGAPI_H_ */
