@@ -458,6 +458,10 @@ int32_t field::select_place(uint16_t step, uint8_t playerid, uint32_t flag, uint
 			uint8_t l = returns.bvalue[pt + 1];
 			uint8_t s = returns.bvalue[pt + 2];
 			uint32_t sel = 0x1u << (s + (p == playerid ? 0 : 16) + (l == LOCATION_MZONE ? 0 : 8));
+			
+			printf("SELECT_PLACE DEBUG: p=%d l=%d s=%d playerid=%d sel=%08X flag=%08X selected=%08X count=%d i=%d\n",
+            p, l, s, playerid, sel, flag, selected, count, i);
+			
 			if(!(count == 0 && i == 0 && l == 0)
 				&& ((p != 0 && p != 1)
 					|| ((l != LOCATION_MZONE) && (l != LOCATION_SZONE))
